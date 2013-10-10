@@ -81,11 +81,15 @@ public class FirstGUI extends JFrame implements ActionListener
     //Das Spiel starten, wenn der startbutton gedrück wird
     @Override
 	public void actionPerformed(ActionEvent ae) {
+<<<<<<< HEAD
 		if (ae.getSource() == this.startbutton) { 
 			setValues (); 
 			new Game (); 
 			System.out.println("starte Spiel"); 
 		}
+=======
+		if (ae.getSource() == this.startbutton) { setValues (); new Game (); System.out.println("starte Spiel"); }
+>>>>>>> 002735bfd793fda65f5fda80ae739bedbbeed706
 	}
 		
     //die Comcoboxen auswerten und dementsprechend werte setzen

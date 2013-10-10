@@ -52,6 +52,10 @@ public class Game extends JFrame  {
 	        
 		}
 		
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 002735bfd793fda65f5fda80ae739bedbbeed706
 	
 		public Game () {
 			super ("CastleWars");
@@ -130,6 +134,7 @@ public class Game extends JFrame  {
 	        	lasttime = currenttime;
 	        	currenttime = System.currentTimeMillis();
 	        	totaltime += (currenttime - lasttime);
+<<<<<<< HEAD
 	        	if (totaltime > 100) totaltime -= 100; player1counter += 1; player2counter += 1;
 	        	
 	        	//schauen, ob noch alle leben, wenn jemand tot, neue runde
@@ -141,6 +146,19 @@ public class Game extends JFrame  {
 	        	
 	        	if (player1.wins == 5) running = false; new Levelup (1); player1.wins -= 5;
 	        	if (player2.wins == 5) running = false; new Levelup (2); player2.wins -= 5;
+=======
+	        	if (totaltime > 100) {totaltime -= 100; player1counter += 1; player2counter += 1;};
+	        	
+	        	//schauen, ob noch alle leben, wenn jemand tot, neue runde
+	        	
+	        	if (player1.health <= 0 ) {running = false; player2.wins += 1; new roundpopup ();};
+	        	if (player2.health <= 0 ) {running = false; player1.wins += 1; new roundpopup ();};
+	        	
+	        	//schauen, ob jemand 5 wins hat, und somit aufleveln kann
+	        	
+	        	if (player1.wins == 5) {running = false; new Levelup (1); player1.wins -= 5;};
+	        	if (player2.wins == 5) {running = false; new Levelup (2); player2.wins -= 5;};
+>>>>>>> 002735bfd793fda65f5fda80ae739bedbbeed706
 	        	
 	            //hintergrund löschen
 	            
@@ -149,11 +167,23 @@ public class Game extends JFrame  {
 	            g2d.fillRect( 0, 0, FirstGUI.mapsize, FirstGUI.mapheight );
                                   
 	            // zeichne das spiel
+<<<<<<< HEAD
 	            
 	            //Hintergrund laden und zeichnen  &&  fallunterscheidung nach spielewelt
 	    		if (FirstGUI.anziehung == 1) hintergrund = Toolkit.getDefaultToolkit().getImage("background1.jpg");
 	    		if (FirstGUI.anziehung== 0.16) hintergrund = Toolkit.getDefaultToolkit().getImage("background2.jpg");
 	    		if (FirstGUI.anziehung == 0.33) hintergrund = Toolkit.getDefaultToolkit().getImage("background3.jpg");
+=======
+
+	            Class<? extends JFrame> j = this.getClass();
+	            
+	            //Hintergrund laden und zeichnen  &&  fallunterscheidung nach spielewelt
+	    		if (FirstGUI.anziehung == 1) {hintergrund = Toolkit.getDefaultToolkit().createImage(j.getResource("/background1.jpg"));};//Toolkit.getDefaultToolkit().getImage("background1.jpg");
+	            //Hintergrund laden und zeichnen  &&  fallunterscheidung nach spielewelt
+	    		if (FirstGUI.anziehung == 1) {hintergrund = Toolkit.getDefaultToolkit().getImage("background1.jpg");};
+	    		if (FirstGUI.anziehung== 0.16) {hintergrund = Toolkit.getDefaultToolkit().getImage("background2.jpg");};
+	    		if (FirstGUI.anziehung == 0.33) {hintergrund = Toolkit.getDefaultToolkit().getImage("background3.jpg");};
+>>>>>>> 002735bfd793fda65f5fda80ae739bedbbeed706
 	    		g2d.drawImage(hintergrund, 0, 0, FirstGUI.mapsize, FirstGUI.mapheight, this);
 	            player1.paint(g2d);
 	            player2.paint(g2d);
