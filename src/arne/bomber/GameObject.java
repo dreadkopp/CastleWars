@@ -1,7 +1,10 @@
 package arne.bomber;
 
 import java.awt.Image;
-
+/**
+ * SPeichert den Zustand eines Objectes im Spiel.
+ * Jegliche Zustandsaenderungen, werden von der GameEngine durchgefuehrt
+ * */
 public class GameObject {
 
 	public int getY() {
